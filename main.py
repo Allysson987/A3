@@ -230,10 +230,10 @@ class Analysing:
                     print("-- SELECIONE 2 PARA LISTAR OS USUÁRIOS CADASTRADOS --")
                     print("-- SELECIONE 3 PARA GERAR MÉTRICAS --")
                     print("-- SELECIONE 4 PARA CALCULAR A MÉDIA DE IDADE --")
-                    print("-- SELECIONE 5 PARA CALCULAR RENDA PER CAPITA'' --")
+                    print("-- SELECIONE 5 PARA CALCULAR A MEDIANA DE IDADE DOS ALFABETIZADOS --")
                     print("-- SELECIONE 6 PARA CALCULAR A TAXA DE ALFABETIZAÇÃO --")
                     print("-- SELECIONE 7 PARA CALCULAR A MÉDIA DE MORADORES --")
-                    print("-- SELECIONE 8 PARA CALCULAR A MÉDIA DE IDADE DE ALFABETIZADOS --")
+                    print("-- SELECIONE 8 PARA SAIR DO PROGRAMA --")
 
                     # print("-- SELECIONE 5 PARA SAIR DO PROGRAMA --")
                     option=int(input(''))
@@ -259,8 +259,9 @@ class Analysing:
                     print(f"A média de idade é: {average_age}")
                 elif option == 5:
                     print("Calculando renda per capita")
-                    # per_capita = self.renda_per_capita(income, residents)
-                    # print(f"A renda per capita é: {per_capita}")
+                    median_age_alfabetized, names_alfabetized = self.median_age_literate()
+                    print(f"A mediana de idade dos alfabetizados é: {median_age_alfabetized}")
+                    print(f"Os alfabetizados são: {', '.join(names_alfabetized)}")
                 elif option == 6:
                     alfabetization_rate = self.calculated_alfabetization_rate()
                     print(f"A taxa de alfabetização é: {alfabetization_rate}%")
@@ -268,9 +269,9 @@ class Analysing:
                     average_residents = self.medium_residents()
                     print(f"A média de moradores é: {average_residents}")
                 elif option == 8:
-                    median_age_alfabetized, names_alfabetized = self.median_age_literate()
-                    print(f"A mediana de idade dos alfabetizados é: {median_age_alfabetized}")
-                    print(f"Os alfabetizados são: {', '.join(names_alfabetized)}")
+                    print("Encerrando o programa.")
+                    break
+                    
 
         except Exception as e:
             print('Erro na seleção', e)
